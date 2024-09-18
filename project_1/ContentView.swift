@@ -8,16 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+    @State private var checkAmount = 0.0
+    @State private var numberOfPeople = 2
+    @State private var tipPercentage = 20
+    
+    let tipPercentages = [10, 15, 20, 25, 0]
         }
-        .padding()
+var body: some View{
+    Form {
+        Section {
+            TextField("Amount", text: checkAmount, format: .currency(code: "USD"))
     }
 }
+    
+
 
 #Preview {
     ContentView()
